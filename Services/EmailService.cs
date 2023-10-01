@@ -1,11 +1,11 @@
-namespace WebApi.Services;
+namespace SvcStudentHorizons.Services;
 
 using MailKit.Net.Smtp;
 using MailKit.Security;
 using Microsoft.Extensions.Options;
 using MimeKit;
 using MimeKit.Text;
-using WebApi.Helpers;
+using SvcStudentHorizons.Helpers;
 
 public interface IEmailService
 {

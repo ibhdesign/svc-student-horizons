@@ -1,7 +1,7 @@
-﻿namespace WebApi.Controllers;
+﻿namespace SvcStudentHorizons.Controllers;
 
 using Microsoft.AspNetCore.Mvc;
-using WebApi.Entities;
+using SvcStudentHorizons.Entities;
 
 [Controller]
 public abstract class BaseController : ControllerBase

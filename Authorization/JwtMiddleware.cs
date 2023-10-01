@@ -1,7 +1,7 @@
-namespace WebApi.Authorization;
+namespace SvcStudentHorizons.Authorization;
 
 using Microsoft.Extensions.Options;
-using WebApi.Helpers;
+using SvcStudentHorizons.Helpers;
 
 public class JwtMiddleware
 {

@@ -1,4 +1,4 @@
-namespace WebApi.Entities;
+namespace SvcStudentHorizons.Entities;
 
 public class Account
 {
@@ -9,6 +9,7 @@ public class Account
     public string Email { get; set; }
     public string PasswordHash { get; set; }
     public bool AcceptTerms { get; set; }
+    public bool Disabled { get; set; }
     public Role Role { get; set; }
     public string VerificationToken { get; set; }
     public DateTime? Verified { get; set; }
@@ -20,8 +21,8 @@ public class Account
     public DateTime? Updated { get; set; }
     public List<RefreshToken> RefreshTokens { get; set; }
 
-    public bool OwnsToken(string token) 
+    public bool OwnsToken(string token)
     {
-        return this.RefreshTokens?.Find(x => x.Token == token) != null;
+        return RefreshTokens?.Find(x => x.Token == token) != null;
     }
 }

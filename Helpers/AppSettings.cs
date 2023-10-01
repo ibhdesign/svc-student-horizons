@@ -1,4 +1,4 @@
-namespace WebApi.Helpers;
+namespace SvcStudentHorizons.Helpers;
 
 public class AppSettings
 {

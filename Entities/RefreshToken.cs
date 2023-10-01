@@ -1,4 +1,4 @@
-namespace WebApi.Entities;
+namespace SvcStudentHorizons.Entities;
 
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;

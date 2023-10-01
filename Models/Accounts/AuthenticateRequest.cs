@@ -1,4 +1,4 @@
-namespace WebApi.Models.Accounts;
+namespace SvcStudentHorizons.Models.Accounts;
 
 using System.ComponentModel.DataAnnotations;
 

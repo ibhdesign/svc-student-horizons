@@ -1,10 +1,10 @@
-﻿namespace WebApi.Controllers;
+﻿namespace SvcStudentHorizons.Controllers;
 
 using Microsoft.AspNetCore.Mvc;
-using WebApi.Authorization;
-using WebApi.Entities;
-using WebApi.Models.Accounts;
-using WebApi.Services;
+using SvcStudentHorizons.Authorization;
+using SvcStudentHorizons.Entities;
+using SvcStudentHorizons.Models.Accounts;
+using SvcStudentHorizons.Services;
 
 [Authorize]
 [ApiController]

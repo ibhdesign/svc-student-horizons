@@ -1,8 +1,8 @@
-namespace WebApi.Helpers;
+namespace SvcStudentHorizons.Helpers;
 
 using AutoMapper;
-using WebApi.Entities;
-using WebApi.Models.Accounts;
+using SvcStudentHorizons.Entities;
+using SvcStudentHorizons.Models.Accounts;
 
 public class AutoMapperProfile : Profile
 {

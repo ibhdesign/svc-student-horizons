@@ -1,17 +1,17 @@
-namespace WebApi.Services;
+namespace SvcStudentHorizons.Services;
 
 using AutoMapper;
 using BCrypt.Net;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
+using SvcStudentHorizons.Authorization;
+using SvcStudentHorizons.Entities;
+using SvcStudentHorizons.Helpers;
+using SvcStudentHorizons.Models.Accounts;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
-using WebApi.Authorization;
-using WebApi.Entities;
-using WebApi.Helpers;
-using WebApi.Models.Accounts;
 
 public interface IAccountService
 {
@@ -163,7 +163,7 @@ public class AccountService : IAccountService
     {
         var account = _context.Accounts.SingleOrDefault(x => x.VerificationToken == token);
 
-        if (account == null) 
+        if (account == null)
             throw new AppException("Verification failed");
 
         account.Verified = DateTime.UtcNow;
@@ -318,7 +318,7 @@ public class AccountService : IAccountService
         var tokenIsUnique = !_context.Accounts.Any(x => x.ResetToken == token);
         if (!tokenIsUnique)
             return generateResetToken();
-        
+
         return token;
     }
 
@@ -331,7 +331,7 @@ public class AccountService : IAccountService
         var tokenIsUnique = !_context.Accounts.Any(x => x.VerificationToken == token);
         if (!tokenIsUnique)
             return generateVerificationToken();
-        
+
         return token;
     }
 
@@ -344,8 +344,8 @@ public class AccountService : IAccountService
 
     private void removeOldRefreshTokens(Account account)
     {
-        account.RefreshTokens.RemoveAll(x => 
-            !x.IsActive && 
+        account.RefreshTokens.RemoveAll(x =>
+            !x.IsActive &&
             x.Created.AddDays(_appSettings.RefreshTokenTTL) <= DateTime.UtcNow);
     }
 

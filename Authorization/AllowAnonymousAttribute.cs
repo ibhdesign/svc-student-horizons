@@ -1,4 +1,4 @@
-namespace WebApi.Authorization;
+namespace SvcStudentHorizons.Authorization;
 
 [AttributeUsage(AttributeTargets.Method)]
 public class AllowAnonymousAttribute : Attribute

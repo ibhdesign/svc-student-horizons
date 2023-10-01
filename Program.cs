@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using SvcStudentHorizons.Authorization;
+using SvcStudentHorizons.Helpers;
+using SvcStudentHorizons.Services;
 using System.Text.Json.Serialization;
-using WebApi.Authorization;
-using WebApi.Helpers;
-using WebApi.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
